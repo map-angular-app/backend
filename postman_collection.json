@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "a9fbdbe6-0a2e-46c3-8128-75e990fcdee1",
+		"name": "Hospital Mobile App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22508878"
+	},
+	"item": [
+		{
+			"name": "City List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{endpoint_url}}/api/city-list.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Hospital Chain List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{endpoint_url}}/api/hospital-list.php"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Hospitals by Current Location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint_url}}/api/hospitals.php?type=current_location&value=current_location&lat=&lng&radius=20",
+					"host": [
+						"{{endpoint_url}}"
+					],
+					"path": [
+						"api",
+						"hospitals.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "current_location"
+						},
+						{
+							"key": "value",
+							"value": "current_location"
+						},
+						{
+							"key": "lat",
+							"value": "",
+							"description": "the latitude of current location"
+						},
+						{
+							"key": "lng",
+							"value": null,
+							"description": "the longitude of current location"
+						},
+						{
+							"key": "radius",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Hospitals by Citys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint_url}}/api/hospitals.php?type=city&lat=&lng&radius=20",
+					"host": [
+						"{{endpoint_url}}"
+					],
+					"path": [
+						"api",
+						"hospitals.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "city"
+						},
+						{
+							"key": "lat",
+							"value": "",
+							"description": "the latitude of city"
+						},
+						{
+							"key": "lng",
+							"value": null,
+							"description": "the longitude of city"
+						},
+						{
+							"key": "radius",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Hospitals by Hospital Chain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint_url}}/api/hospitals.php?type=hospital_chain&value",
+					"host": [
+						"{{endpoint_url}}"
+					],
+					"path": [
+						"api",
+						"hospitals.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "hospital_chain"
+						},
+						{
+							"key": "value",
+							"value": null,
+							"description": "name of the hospital chain"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint_url",
+			"value": "https://localhost:8000",
+			"type": "string"
+		}
+	]
+}
